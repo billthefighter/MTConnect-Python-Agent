@@ -12,6 +12,23 @@ python = "^3.8"
 black = "^22.12.0"
 pylint = "^2.15.10"
 
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+pytest = "8.3.3 "
+black = "^22.12.0"
+pylint = "^2.15.10"
+
+# ==== pytest ====
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--import-mode=importlib"
+python_files = [
+    "tests.py",
+    "test_*.py",
+]
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
